@@ -4,10 +4,14 @@ permalink: /:year/:month/:day/:title.html
 # Choose 'tag' or 'category' as filter in sidebar.
 filter: 'category'
 
+
+
 # weibo:    ID
 github: kbBlog
 
 author: Wen Fu Bin
+
+url: "https://kbblog.github.io/" #
 
 baseurl: "" #根目录
 
