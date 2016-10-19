@@ -1,3 +1,23 @@
-name: Hank Quinlan, Horrible Cop
 markdown: kramdown
-permalink: /blog/:year/:month/:day/:title
+permalink: /:year/:month/:day/:title.html
+
+# Choose 'tag' or 'category' as filter in sidebar.
+filter: 'category'
+
+
+
+# weibo:    ID
+github: kbBlog
+
+author: Wen Fu Bin
+
+url: "https://kbblog.github.io/" #
+
+baseurl: "" #根目录
+
+title: "空白's Blog"
+
+sass:
+  style: compressed
+
+highlighter: rouge
