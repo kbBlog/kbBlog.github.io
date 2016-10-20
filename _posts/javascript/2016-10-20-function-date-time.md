@@ -5,6 +5,9 @@ category: Javascript
 tags: Function
 description: 和PHP一样的时间戳格式化函数
 ---
+
+### 和PHP一样的时间戳格式化函数
+
 /**
  * 和PHP一样的时间戳格式化函数
  * @param {string} format 格式
