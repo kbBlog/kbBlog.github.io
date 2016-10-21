@@ -10,6 +10,7 @@ description: PHP 各种数据类型  系统函数输出比较
 
 **用 PHP 函数对 $x 的比较**
 
+```
 表达式		  gettype()	  empty()	  is_null()	  isset()	boolean : if($x)
 
 $x = "";   	  string	  TRUE        FALSE       TRUE      FALSE
@@ -45,7 +46,7 @@ $x = "0";     string      TRUE        FALSE       TRUE      FALSE
 $x = 42;      integer     FALSE       FALSE       TRUE      TRUE
 
 $x = "php";   string      FALSE       FALSE       TRUE      TRUE
-
+```
 
 
 

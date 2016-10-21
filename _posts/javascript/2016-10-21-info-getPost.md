@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Javascript 打印输出所有对象的属性和方法
+title: Javascript 深入理解jQuery中$.get、$.post、$.getJSON和$.ajax的用法
 category: Javascript
 tags: Info
-description: Javascript 打印输出所有对象的属性和方法
+description: Javascript 深入理解jQuery中$.get、$.post、$.getJSON和$.ajax的用法
 ---
 
 ### 1、$.get
@@ -21,19 +21,20 @@ data：可选参数，object类型，发送至服务器的key/value数据会作�
 callback：可选参数，function类型，当ajax返回成功时自动调用该函数。
 
 最后写一个`$.get()`的实例供大家参考：
+
 ```js
-$.get(
-    "submit.aspx",{
-        id:     '123',
-        name:   '青藤园',
-    },function(data,state){
-        //这里显示从服务器返回的数据
-        alert(data);
-        //这里显示返回的状态
-        alert(state);
-    }
-)
-```js
+	$.get(
+		"submit.aspx",{
+			id:     '123',
+			name:   '青藤园',
+		},function(data,state){
+			//这里显示从服务器返回的数据
+			alert(data);
+			//这里显示返回的状态
+			alert(state);
+		}
+	)
+```
 
 ### 2、$.post()
 
@@ -46,19 +47,20 @@ $.post(url,[data],[callback],[type])
 type：type为请求的数据类型，可以是html,xml,json等类型，如果我们设置这个参数为：json，那么返回的格式则是json格式的，如果没有设置，就和`$.get()`返回的格式一样，都是字符串的。
 
 最后写一个`$.post()`的实例供大家参考：
+
 ```js
-$.post(
-    "submit.aspx",{
-        id:     '123',
-        name:   '青藤园',
-    },function(data,state){
-        //这里显示从服务器返回的数据
-        alert(data);
-        //这里显示返回的状态
-        alert(state);
-    },
-    "json"
-)
+	$.post(
+		"submit.aspx",{
+			id:     '123',
+			name:   '青藤园',
+		},function(data,state){
+			//这里显示从服务器返回的数据
+			alert(data);
+			//这里显示返回的状态
+			alert(state);
+		},
+		"json"
+	)
 ```
 
 ### 3、$.getJSON()
@@ -78,19 +80,20 @@ JSON是一种理想的数据传输格式，它能够很好的融合与JavaScript
 $.ajax(options)
 
 其中options是一个object类型，它指明了本次ajax调用的具体参数，这里我把最常用的几个参数附上
+
 ```js
-$.ajax({
-	url: 'submit.aspx',
-	datatype: "json",
-	type: 'post',
-	success: function (e) {   //成功后回调
-		alert(e);
-	},
-	error: function(e){    //失败后回调
-		alert(e);
-	},
-	beforeSend: function(){  /发送请求前调用，可以放一些"正在加载"之类额话
-		alert("正在加载");
-	}
-})
+	$.ajax({
+		url: 'submit.aspx',
+		datatype: "json",
+		type: 'post',
+		success: function (e) {   //成功后回调
+			alert(e);
+		},
+		error: function(e){    //失败后回调
+			alert(e);
+		},
+		beforeSend: function(){  /发送请求前调用，可以放一些"正在加载"之类额话
+			alert("正在加载");
+		}
+	})
 ```

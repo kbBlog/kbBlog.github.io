@@ -50,8 +50,11 @@ description: Javascript 开发的45个经典技巧
 ### 6、小心使用`typeof`、`instanceof`和`contructor`
 
 `typeof`：JavaScript一元操作符，用于以字符串的形式返回变量的原始类型，注意，typeof null也会返回object，大多数的对象类型（数组Array、时间Date等）也会返回object
+
 `contructor`：内部原型属性，可以通过代码重写
+
 `instanceof`：JavaScript操作符，会在原型链中的构造器中搜索，找到则返回true，否则返回false
+
 ```js
 	var arr = ["a", "b", "c"];
 	typeof arr;   // 返回 "object" 
@@ -62,6 +65,7 @@ description: Javascript 开发的45个经典技巧
 ### 7、使用自调用函数
 
 函数在创建之后直接自动执行，通常称之为自调用匿名函数（Self-Invoked Anonymous Function）或直接调用函数表达式（Immediately Invoked Function Expression ）。格式如下：
+
 ```js
 	(function(){
 		// 置于此处的代码将自动执行
@@ -73,6 +77,7 @@ description: Javascript 开发的45个经典技巧
 ```
 
 ### 8、从数组中随机获取成员
+
 ```js
 	var items = [12, 548 , 'a' , 2 , 5478 , 'foo' , 8852, , 'Doe' , 2145 , 119];
 	var  randomItem = items[Math.floor(Math.random() * items.length)];
@@ -81,6 +86,7 @@ description: Javascript 开发的45个经典技巧
 ### 9、获取指定范围内的随机数
 
 这个功能在生成测试用的假数据时特别有数，比如介与指定范围内的工资数。
+
 ```js
 	var x = Math.floor(Math.random() * (max - min + 1)) + min;
 ```
@@ -92,6 +98,7 @@ description: Javascript 开发的45个经典技巧
 ```
 
 ### 11、生成随机的字母数字字符串
+
 ```js
 	function generateRandomAlphaNum(len) {
 		var rdmString = "";
@@ -101,22 +108,27 @@ description: Javascript 开发的45个经典技巧
 ```
 
 ### 12、打乱数字数组的顺序
+
 ```js
 	var numbers = [5, 458 , 120 , -215 , 228 , 400 , 122205, -85411];
 	numbers = numbers.sort(function(){ return Math.random() - 0.5});
 	/* numbers 数组将类似于 [120, 5, 228, -215, 400, 458, -85411, 122205]  */
 ```
+
 这里使用了JavaScript内置的数组排序函数，更好的办法是用专门的代码来实现（如Fisher-Yates算法），可以参见StackOverFlow上的这个讨论。
 
 ### 13、字符串去空格
 
 Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaScript中是没有的，可以通过下面的代码来为String对象函数一个trim函数：
+
 ```js
 	String.prototype.trim = function(){return this.replace(/^\s+|\s+$/g, "");};
 ```
+
 新的JavaScript引擎已经有了`trim()`的原生实现。
 
 ### 14、数组之间追加
+
 ```js
 	var array1 = [12 , "foo" , {name "Joe"} , -2458];
 	var array2 = ["Doe" , 555 , 100];
@@ -125,11 +137,13 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 ```
 
 ### 15、对象转换为数组
+
 ```js
 	var argArray = Array.prototype.slice.call(arguments);
 ```
 
 ### 16、验证是否是数字
+
 ```js
 	function isNumber(n){
 		return !isNaN(parseFloat(n)) && isFinite(n);
@@ -137,16 +151,21 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 ```
 
 ### 17、验证是否是数组
+
 ```js
 	function isArray(obj){
 		return Object.prototype.toString.call(obj) === '[object Array]' ;
 	}
 ```
+
 但如果`toString()`方法被重写过得话，就行不通了。也可以使用下面的方法：
+
 ```js
 	Array.isArray(obj); // its a new Array method
 ```
+
 如果在浏览器中没有使用frame，还可以用instanceof，但如果上下文太复杂，也有可能出错。
+
 ```js
 	var myFrame = document.createElement('iframe');
 	document.body.appendChild(myFrame);
@@ -158,6 +177,7 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 ```
 
 ### 18、获取数组中的最大值和最小值
+
 ```js
 	var  numbers = [5, 458 , 120 , -215 , 228 , 400 , 122205, -85411]; 
 	var maxInNumbers = Math.max.apply(Math, numbers); 
@@ -165,6 +185,7 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 ```
 
 ### 19、清空数组
+
 ```js
 	var myArray = [12 , 222 , 1000 ];  
 	myArray.length = 0; // myArray will be equal to [].
@@ -175,14 +196,17 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 如果对数组元素直接使用`delete`，其实并没有删除，只是将元素置为了`undefined`。数组元素删除应使用`splice`。
 
 切忌：
+
 ```js
 	var items = [12, 548 ,'a' , 2 , 5478 , 'foo' , 8852, , 'Doe' ,2154 , 119 ]; 
 	items.length; // return 11 
 	delete items[3]; // return true 
 	items.length; // return 11 
 	/* items 结果为 [12, 548, "a", undefined × 1, 5478, "foo", 8852, undefined × 1, "Doe", 2154, 119] */
-```js
+```
+
 而应：
+
 ```js
 	var items = [12, 548 ,'a' , 2 , 5478 , 'foo' , 8852, , 'Doe' ,2154 , 119 ]; 
 	items.length; // return 11 
@@ -190,28 +214,35 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 	items.length; // return 10 
 	/* items 结果为 [12, 548, "a", 5478, "foo", 8852, undefined × 1, "Doe", 2154, 119]
 ```
+
 删除对象的属性时可以使用`delete`。
 
 ### 21、使用`length`属性截断数组
 
 前面的例子中用`length`属性清空数组，同样还可用它来截断数组：
+
 ```js
 	var myArray = [12 , 222 , 1000 , 124 , 98 , 10 ];  
 	myArray.length = 4; // myArray will be equal to [12 , 222 , 1000 , 124].
 ```
+
 与此同时，如果把`length`属性变大，数组的长度值变会增加，会使用`undefined`来作为新的元素填充。`length`是一个可写的属性。
+
 ```js
 	myArray.length = 10; // the new array length is 10 
 	myArray[myArray.length - 1] ; // undefined
 ```
 
 ### 22、在条件中使用逻辑与或
+
 ```js
 	var foo = 10;  
 	foo == 10 && doSomething(); // is the same thing as if (foo == 10) doSomething(); 
 	foo == 5 || doSomething(); // is the same thing as if (foo != 5) doSomething();
 ```
+
 逻辑或还可用来设置默认值，比如函数参数的默认值。
+
 ```js
 	function doSomething(arg1){ 
 		arg1 = arg1 || 10; // arg1 will have 10 as a default value if it’s not already set
@@ -219,6 +250,7 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 ```
 
 ### 23、使得`map()`函数方法对数据循环
+
 ```js
 	var squares = [1,2,3,4].map(function (val) {  
 		return val * val;  
@@ -227,18 +259,22 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 ```
 
 ### 24、保留指定小数位数
+
 ```js
 	var num =2.443242342;
 	num = num.toFixed(4);  // num will be equal to 2.4432
 ```
+
 注意，`toFixec()`返回的是字符串，不是数字。
 
 ### 25、浮点计算的问题
+
 ```js
 	0.1 + 0.2 === 0.3 // is false 
 	9007199254740992 + 1 // is equal to 9007199254740992
 	9007199254740992 + 2 // is equal to 9007199254740994
 ```
+
 为什么呢？因为0.1+0.2等于0.30000000000000004。JavaScript的数字都遵循IEEE 754标准构建，在内部都是64位浮点小数表示，具体可以参见JavaScript中的数字是如何编码的.
 
 可以通过使用`toFixed()`和`toPrecision()`来解决这个问题。
@@ -246,6 +282,7 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 ### 26、通过`for-in`循环检查对象的属性
 
 下面这样的用法，可以防止迭代的时候进入到对象的原型属性中。
+
 ```js
 	for (var name in object) {  
 		if (object.hasOwnProperty(name)) { 
@@ -255,6 +292,7 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 ```
 
 ### 27、逗号操作符
+
 ```js
 	var a = 0; 
 	var b = ( a++, 99 ); 
@@ -265,6 +303,7 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 ### 28、临时存储用于计算和查询的变量
 
 在jQuery选择器中，可以临时存储整个DOM元素。
+
 ```js
 	var navright = document.querySelector('#right'); 
 	var navleft = document.querySelector('#left'); 
@@ -273,6 +312,7 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 ```
 
 ### 29、提前检查传入isFinite()的参数
+
 ```js
 	isFinite(0/0) ; // false
 	isFinite("foo"); // false
@@ -284,14 +324,17 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 ```
 
 ### 30、避免在数组中使用负数做索引
+
 ```js
 	var numbersArray = [1,2,3,4,5];
 	var from = numbersArray.indexOf("foo") ; // from is equal to -1
 	numbersArray.splice(from,2); // will return [5]
 ```
+
 注意传给`splice`的索引参数不要是负数，当是负数时，会从数组结尾处删除元素。
 
 ### 31、用JSON来序列化与反序列化
+
 ```js
 	var person = {name :'Saad', age : 26, department : {ID : 15, name : "R&D"} };
 	var stringFromPerson = JSON.stringify(person);
@@ -303,6 +346,7 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 ### 32、不要使用eval()或者函数构造器
 
 `eval()`和函数构造器（Function consturctor）的开销较大，每次调用，JavaScript引擎都要将源代码转换为可执行的代码。
+
 ```js
 	var func1 = new Function(functionCode);
 	var func2 = eval(functionCode);
@@ -315,20 +359,25 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 ### 34、不要对数组使用for-in
 
 避免：
+
 ```js
 	var sum = 0;  
 	for (var i in arrayNumbers) {  
 		sum += arrayNumbers[i];  
 	}
 ```
+
 而是：
+
 ```js
 	var sum = 0;  
 	for (var i = 0, len = arrayNumbers.length; i < len; i++) {  
 		sum += arrayNumbers[i];  
 	}
 ```
+
 另外一个好处是，i和len两个变量是在for循环的第一个声明中，二者只会初始化一次，这要比下面这种写法快：
+
 ```js
 	for (var i = 0; i < arrayNumbers.length; i++)
 ```
@@ -336,11 +385,14 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 ### 35、传给`setInterval()`和`setTimeout()`时使用函数而不是字符串
 
 如果传给`setTimeout(`)和`setInterval()`一个字符串，他们将会用类似于eval方式进行转换，这肯定会要慢些，因此不要使用：
+
 ```js
 	setInterval('doSomethingPeriodically()', 1000);  
 	setTimeout('doSomethingAfterFiveSeconds()', 5000);
 ```
+
 而是用：
+
 ```js
 	setInterval(doSomethingPeriodically, 1000);  
 	setTimeout(doSomethingAfterFiveSeconds, 5000);
@@ -353,6 +405,7 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 ### 37、在switch/case中使用数字区间
 
 其实，switch/case中的case条件，还可以这样写：
+
 ```js
 	function getCategory(age) {  
 		var category = "";  
@@ -378,6 +431,7 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 ### 38、使用对象作为对象的原型
 
 下面这样，便可以给定对象作为参数，来创建以此为原型的新对象：
+
 ```js
 	function clone(object) {  
 		function OneShotConstructor(){}; 
@@ -388,6 +442,7 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 ```
 
 ### 39、HTML字段转换函数
+
 ```js
 	function escapeHTML(text) {  
 		var replacements= {"<": "<", ">": ">","&": "&", "\"": """};                      
@@ -402,6 +457,7 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 `try-catch-finally`中catch部分在执行时会将异常赋给一个变量，这个变量会被构建成一个运行时作用域内的新的变量。
 
 切忌：
+
 ```js
 	var object = ['foo', 'bar'], i;  
 	for (i = 0, len = object.length; i <len; i++) {  
@@ -413,7 +469,9 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 		} 
 	}
 ```
+
 而应该：
+
 ```js
 	var object = ['foo', 'bar'], i;  
 	try { 
@@ -429,6 +487,7 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 ### 41、使用`XMLHttpRequests`时注意设置超时
 
 `XMLHttpRequests`在执行时，当长时间没有响应（如出现网络问题等）时，应该中止掉连接，可以通过`setTimeout()`来完成这个工作：
+
 ```js
 	var xhr = new XMLHttpRequest (); 
 	xhr.onreadystatechange = function () {  
@@ -443,6 +502,7 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 	xhr.open('GET', url, true);  
 	xhr.send();
 ```
+
 同时需要注意的是，不要同时发起多个`XMLHttpRequests`请求。
 
 ### 42、处理`WebSocket`的超时
@@ -450,6 +510,7 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 通常情况下，`WebSocket`连接创建后，如果30秒内没有任何活动，服务器端会对连接进行超时处理，防火墙也可以对单位周期没有活动的连接进行超时处理。
 
 为了防止这种情况的发生，可以每隔一定时间，往服务器发送一条空的消息。可以通过下面这两个函数来实现这个需求，一个用于使连接保持活动状态，另一个专门用于结束这个状态。
+
 ```js
 	var timerID = 0; 
 	function keepAlive() { 
@@ -465,16 +526,20 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 		}  
 	}
 ```
+
 `keepAlive()`函数可以放在`WebSocket`连接的`onOpen()`方法的最后面，`cancelKeepAlive()`放在`onClose()`方法的最末尾。
 
 ### 43、时间注意原始操作符比函数调用快，使用`VanillaJS`
 
 比如，一般不要这样：
+
 ```js
 	var min = Math.min(a,b); 
 	A.push(v);
 ```
+
 可以这样来代替：
+
 ```js
 	var min = a < b ? a : b; 
 	A[A.length] = v;
