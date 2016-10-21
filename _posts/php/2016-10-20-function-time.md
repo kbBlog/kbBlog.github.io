@@ -47,7 +47,6 @@ description: PHP 关于时间戳函数大全
 	}
 ```
 
-
 	/**
 	 *
 	 * 获取指定年月的开始和结束时间戳
@@ -71,6 +70,7 @@ description: PHP 关于时间戳函数大全
 	 * @param int $time 时间
 	 * @return string
 	 */
+
 ```php	 
 	function tranTime($time) {
 		$ytime = date("Y-m-d H:i", $time);
@@ -104,7 +104,10 @@ description: PHP 关于时间戳函数大全
 <?php
 
 	echo '今天是'. date('Y年m月d日 '). ' 星期' . cnWeek(date('Y-M-d'));
-
+	
+	/*
+	*	时间戳显示星期
+	*/
 	function cnWeek($date)
 	{
 	  $arr = array('天','一','二','三','四','五','六');
