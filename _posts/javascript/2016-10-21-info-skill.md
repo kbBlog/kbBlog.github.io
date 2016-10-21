@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Javascript 开发的45个经典技巧
+title: Javascript 开发的44个经典技巧
 category: Javascript
 tags: Info
-description: Javascript 开发的45个经典技巧
+description: Javascript 开发的44个经典技巧
 ---
 
 > JavaScript是一个绝冠全球的编程语言，可用于Web开发、移动应用开发（PhoneGap、Appcelerator）、服务器端开发（Node.js和Wakanda）等等。JavaScript还是很多新手踏入编程世界的第一个语言。既可以用来显示浏览器中的简单提示框，也可以通过nodebot或nodruino来控制机器人。能够编写结构清晰、性能高效的JavaScript代码的开发人员，现如今已成了招聘市场最受追捧的人。
@@ -547,4 +547,6 @@ Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaS
 
 ### 44、开发时注意代码结构，上线前检查并压缩JavaScript代码
 
-别忘了在写代码时使用一个代码美化工具。使用JSLint(一个语法检查工具)并且在上线前压缩代码（比如使用JSMin）。注：现在代码压缩一般推荐 [UglifyJS] (https://github.com/mishoo/UglifyJS2)
+别忘了在写代码时使用一个代码美化工具。使用`JSLint`(一个语法检查工具)并且在上线前压缩代码（比如使用`JSMin`）。
+
+注：现在代码压缩一般推荐 [UglifyJS](https://github.com/mishoo/UglifyJS2)

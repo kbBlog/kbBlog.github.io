@@ -11,11 +11,11 @@ description: PHP 各种数据类型  系统函数输出比较
 **用 PHP 函数对 $x 的比较**
 
 ```
-表达式		  gettype()	  empty()	  is_null()	  isset()	boolean : if($x)
+表达式        gettype()   empty()     is_null()   isset()   boolean : if($x)
 
-$x = "";   	  string	  TRUE        FALSE       TRUE      FALSE
+$x = "";      string      TRUE        FALSE       TRUE      FALSE
 
-$x = NULL	  NULL		  TRUE        TRUE        FALSE     FALSE
+$x = NULL     NULL        TRUE        TRUE        FALSE     FALSE
 
 var $x;       NULL        TRUE        TRUE        FALSE     FALSE
 
