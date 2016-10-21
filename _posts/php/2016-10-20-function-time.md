@@ -1,11 +1,12 @@
 ---
 layout: post
-title: 获取指定年月周期的时间戳
+title: PHP 获取指定年月周期的时间戳
 category: PHP
 tags: Function
-description: 获取指定年月周期的时间戳
+description: PHP 获取指定年月周期的时间戳
 ---
 
+```php	
 	/**
 	* 计算每个月有几周及每周的起始时间和结束时间
 	* @param srting $month 时间：2016-01
@@ -25,7 +26,9 @@ description: 获取指定年月周期的时间戳
 		}
 		return $weekinfo;
 	}
+···
 
+```php
 	/**
 	 *
 	 * 获取指定年月的开始和结束时间戳
@@ -41,7 +44,9 @@ description: 获取指定年月周期的时间戳
 		$d = date('t', strtotime($y.'-'.$m));
 		return array("firsttime"=> strtotime($y.'-'.$m),"lasttime"=> mktime(23,59,59,$m,$d,$y));
 	}
+···
 
+```php
 	/**
 	 *
 	 * 获取指定年月的开始和结束时间戳
@@ -57,3 +62,4 @@ description: 获取指定年月周期的时间戳
 		$d = date('t', $time);
 		returnarray("firsttime"=>mktime(0,0,0,$m,1,$y),"lasttime"=>mktime(23,59,59,$m,$d,$y));
 	}
+···

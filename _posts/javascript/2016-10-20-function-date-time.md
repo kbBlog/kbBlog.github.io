@@ -1,13 +1,14 @@
 ---
 layout: post
-title: 和PHP一样的时间戳格式化函数
+title: Js 和PHP一样的时间戳格式化函数
 category: Javascript
 tags: Function
-description: 和PHP一样的时间戳格式化函数
+description: Js 和PHP一样的时间戳格式化函数
 ---
 
 ### 和PHP一样的时间戳格式化函数
 
+```js
 /**
  * 和PHP一样的时间戳格式化函数
  * @param {string} format 格式
@@ -131,6 +132,8 @@ function date(format, timestamp){
   return ret;
  });
 }
+```
 
-date('Y-m-d','1350052653');//很方便的将时间戳转换成了2012-10-11 
+date('Y-m-d','1350052653');//很方便的将时间戳转换成了2012-10-11
+ 
 date('Y-m-d H:i:s','1350052653');//得到的结果是2012-10-12 22:37:33
