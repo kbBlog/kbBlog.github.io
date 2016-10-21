@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Http返回的错误代码 
-category: tech
+category: 技术
 tags: info
 description: Http返回的错误代码 
 ---
