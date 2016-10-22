@@ -2,7 +2,7 @@
 layout: post
 title: PHP 关于时间戳函数大全
 category: PHP
-tags: Function
+tags: javascript
 description: PHP 关于时间戳函数大全
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: Javascript 开发的44个经典技巧
 category: Javascript
-tags: Info
+tags: javascript
 description: Javascript 开发的44个经典技巧
 ---
 

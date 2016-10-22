@@ -2,7 +2,7 @@
 layout: post
 title: Javascript 和PHP一样的时间戳格式化函数
 category: Javascript
-tags: Function
+tags: javascript
 description: Javascript 和PHP一样的时间戳格式化函数
 ---
 

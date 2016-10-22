@@ -2,7 +2,7 @@
 layout: post
 title: PHP 关于二维数组的一些操作函数
 category: PHP
-tags: Function
+tags: php
 description: PHP 关于二维数组的一些操作函数
 ---
 

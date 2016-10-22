@@ -2,7 +2,7 @@
 layout: post
 title: Javascript 打印输出所有对象的属性和方法
 category: Javascript
-tags: Info
+tags: javascript
 description: Javascript 打印输出所有对象的属性和方法
 ---
 

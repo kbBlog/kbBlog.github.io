@@ -2,7 +2,7 @@
 layout: post
 title: PHP 服务器响应HTTP的类型ContentType大全
 category: PHP
-tags: Info
+tags: php
 description: PHP 服务器响应HTTP的类型ContentType大全
 ---
 

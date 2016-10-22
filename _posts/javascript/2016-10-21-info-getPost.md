@@ -2,7 +2,7 @@
 layout: post
 title: Javascript 深入理解jQuery中$.get、$.post、$.getJSON和$.ajax的用法
 category: Javascript
-tags: Info
+tags: javascript
 description: Javascript 深入理解jQuery中$.get、$.post、$.getJSON和$.ajax的用法
 ---
 

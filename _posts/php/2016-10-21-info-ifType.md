@@ -2,7 +2,7 @@
 layout: post
 title: PHP 各种数据类型  系统函数输出比较
 category: PHP
-tags: Info
+tags: php
 description: PHP 各种数据类型  系统函数输出比较
 ---
 

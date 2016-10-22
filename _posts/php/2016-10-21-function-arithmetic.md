@@ -2,7 +2,7 @@
 layout: post
 title: PHP 常用基础算法
 category: PHP
-tags: Function
+tags: php
 description: PHP 常用基础算法
 ---
 
